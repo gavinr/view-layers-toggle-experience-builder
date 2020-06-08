@@ -1,3 +1,4 @@
 export default {
-  exampleConfigProperty: "Example Config Property"
+  selectedMap: "Map",
+  layers: "Layers"
 };

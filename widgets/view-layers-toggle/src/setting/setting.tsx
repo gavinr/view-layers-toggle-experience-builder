@@ -1,36 +1,86 @@
-import { React, FormattedMessage } from "jimu-core";
+import { React } from "jimu-core";
 import { BaseWidgetSetting, AllWidgetSettingProps } from "jimu-for-builder";
-import { IMConfig } from "../config";
+import {
+  JimuMapViewSelector,
+  SettingRow,
+  SettingSection,
+} from "jimu-ui/setting-components";
 import defaultI18nMessages from "./translations/default";
+import { IMConfig } from "../config";
+
+interface IState {
+  layerTextareaValue: string;
+}
 
 export default class Setting extends BaseWidgetSetting<
   AllWidgetSettingProps<IMConfig>,
-  any
+  IState
 > {
-  onExampleConfigPropertyChange = (evt: React.FormEvent<HTMLInputElement>) => {
+  constructor(props) {
+    super(props);
+
+    console.log(
+      "TYPEOF undefined",
+      typeof this.props.config?.layerUrls === undefined
+    );
+
+    this.state = {
+      layerTextareaValue:
+        this.props.config?.layerUrls === undefined
+          ? ""
+          : this.props.config?.layerUrls.join("\n"),
+    };
+  }
+
+  onMapSelected = (useMapWidgetIds: string[]) => {
+    this.props.onSettingChange({
+      id: this.props.id,
+      useMapWidgetIds: useMapWidgetIds,
+    });
+  };
+
+  onTextChange = (event) => {
+    this.setState({ layerTextareaValue: event.target.value });
+
     this.props.onSettingChange({
       id: this.props.id,
       config: this.props.config.set(
-        "exampleConfigProperty",
-        evt.currentTarget.value
-      )
+        "layerUrls",
+        event.target.value.split("\n")
+      ),
     });
   };
 
   render() {
     return (
-      <div className="widget-setting-demo">
-        <div>
-          <FormattedMessage
-            id="exampleConfigProperty"
-            defaultMessage={defaultI18nMessages.exampleConfigProperty}
-          />
-          :{" "}
-          <input
-            defaultValue={this.props.config.exampleConfigProperty}
-            onChange={this.onExampleConfigPropertyChange}
-          />
-        </div>
+      <div className="view-layers-toggle-setting">
+        <SettingSection
+          title={this.props.intl.formatMessage({
+            id: "selectedMapLabel",
+            defaultMessage: defaultI18nMessages.selectedMap,
+          })}
+        >
+          <SettingRow>
+            <JimuMapViewSelector
+              onSelect={this.onMapSelected}
+              useMapWidgetIds={this.props.useMapWidgetIds}
+            />
+          </SettingRow>
+        </SettingSection>
+
+        <SettingSection
+          title={this.props.intl.formatMessage({
+            id: "layers",
+            defaultMessage: defaultI18nMessages.layers,
+          })}
+        >
+          <SettingRow>
+            <textarea
+              value={this.state.layerTextareaValue}
+              onChange={this.onTextChange}
+            ></textarea>
+          </SettingRow>
+        </SettingSection>
       </div>
     );
   }
