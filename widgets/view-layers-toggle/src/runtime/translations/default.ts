@@ -1,3 +1,3 @@
 export default {
-  _widgetLabel: "Simple"
+  layer: "Layer",
 };

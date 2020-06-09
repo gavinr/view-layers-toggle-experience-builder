@@ -76,6 +76,8 @@ export default class Setting extends BaseWidgetSetting<
         >
           <SettingRow>
             <textarea
+              className="w-100 p-1"
+              style={{ whiteSpace: "nowrap", minHeight: "100px" }}
               value={this.state.layerTextareaValue}
               onChange={this.onTextChange}
             ></textarea>
