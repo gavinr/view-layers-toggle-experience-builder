@@ -2,33 +2,18 @@
 import { AllWidgetProps, BaseWidget, jsx } from "jimu-core";
 import { IMConfig } from "../config";
 
-// import { TabContent, TabPane, Nav, NavItem, NavLink, Button} from 'jimu-ui';
 import defaultMessages from "./translations/default";
-
-interface IState {
-  selectValue: string;
-}
 
 export default class ViewLayersToggle extends BaseWidget<
   AllWidgetProps<IMConfig>,
-  IState
+  any
 > {
   constructor(props) {
     super(props);
-
-    this.state = {
-      selectValue:
-        this.props.config.layerUrls && this.props.config.layerUrls.length > 0
-          ? this.props.config.layerUrls[0]
-          : "",
-    };
   }
 
   selectChangeHandler = (evt) => {
-    console.log("selectChangeHandler", evt);
-    this.setState({
-      selectValue: evt.target.value,
-    });
+    console.log("selectChangeHandler", evt.target.value);
   };
 
   render() {
@@ -42,8 +27,8 @@ export default class ViewLayersToggle extends BaseWidget<
           <select
             onChange={this.selectChangeHandler}
             style={{ maxWidth: "100%" }}
-            value={this.state.selectValue}
           >
+            <option value=""></option>
             {this.props.config.layerUrls.map((url) => {
               return <option value={url}>{url}</option>;
             })}
