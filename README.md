@@ -6,6 +6,8 @@ Example Experience Builder widget showing how to create a select dropdown that t
 
 [Demo](https://gavinr.github.io/view-layers-toggle-experience-builder/)
 
+([Settings UI](https://github.com/gavinr/view-layers-toggle-experience-builder/blob/master/settings-ui-screenshot.png))
+
 ## Quick Start - Download
 
 1. [Download](https://developers.arcgis.com/downloads/apis-and-sdks?product=arcgis-experience-builder) and unzip [Experience Builder Developer Edition](https://developers.arcgis.com/experience-builder/).
