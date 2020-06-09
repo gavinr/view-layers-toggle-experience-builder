@@ -1,3 +1,3 @@
 export default {
-  layer: "Layer",
+  viewLayer: "View Layer",
 };
