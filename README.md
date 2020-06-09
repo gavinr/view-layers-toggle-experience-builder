@@ -31,4 +31,4 @@ Example Experience Builder widget showing how to create a select dropdown that t
 
 ## More
 
-View my other Experience Builder projects [here](https://github.com/gavinr?tab=repositories&q=experience-builder)
+View my other Experience Builder projects [here](https://github.com/gavinr?tab=repositories&q=experience-builder).
