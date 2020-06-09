@@ -28,3 +28,7 @@ Example Experience Builder widget showing how to create a select dropdown that t
 1. Open the `client` folder as a project in VS Code (or similar code editor).
 1. Make sure *both* scripts are running (in the `server` folder and `client`) folder).
 1. Every time you make a change to your widget, it will be re-built with webpack automatically.
+
+## More
+
+View my other Experience Builder projects [here](https://github.com/gavinr?tab=repositories&q=experience-builder)
