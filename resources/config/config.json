@@ -69,12 +69,11 @@
         "1": {
           "type": "WIDGET",
           "bbox": {
-            "left": "16px",
+            "left": "20.00px",
             "top": "0px",
             "width": "291px",
             "height": "42px",
-            "bottom": "0px",
-            "right": "NaNpx"
+            "bottom": "0px"
           },
           "widgetId": "widget_3",
           "setting": {
@@ -99,12 +98,12 @@
         "3": {
           "type": "WIDGET",
           "bbox": {
-            "left": 1147,
-            "top": "2px",
-            "width": "131px",
-            "height": "56px",
-            "right": "2px",
-            "bottom": 2
+            "left": 1172,
+            "top": "1px",
+            "width": "107px",
+            "height": "58px",
+            "right": "1px",
+            "bottom": 1
           },
           "widgetId": "widget_5",
           "setting": {
@@ -114,10 +113,13 @@
               "right": false,
               "top": false
             },
+            "vCenter": false,
+            "hCenter": false,
             "order": 0,
             "lockParent": false,
             "lockLayout": false
-          }
+          },
+          "isPending": false
         }
       },
       "label": "Default"
@@ -154,7 +156,6 @@
       "content": {
         "0": {
           "type": "WIDGET",
-          "widgetId": "widget_15",
           "bbox": {
             "left": 0,
             "top": 0,
@@ -602,7 +603,7 @@
       "id": "widget_3",
       "uri": "widgets/common/text/",
       "config": {
-        "text": "<p><span style=\"color: rgb(255, 255, 255); font-size: 24px;\">﻿View Layers Toggle</span></p>",
+        "text": "<p><span style=\"color: rgb(255, 255, 255); font-size: 24px;\">﻿View Layers Toggle<span class=\"ql-cursor\">﻿</span></span></p>",
         "placeholder": "<p><span style='font-size: 24px; color: rgb(255, 255, 255);'>Here is the title</span></p>",
         "style": {
           "verticalAlign": "center",
@@ -745,7 +746,10 @@
           "canZoom": true,
           "canHome": true,
           "canSearch": true
-        }
+        },
+        "initialMapDataSourceID": "dataSource_1",
+        "isUseCustomMapState": false,
+        "initialMapState": null
       },
       "layouts": {
         "MapFixedLayout": {
@@ -754,7 +758,12 @@
         }
       },
       "version": "1.0.0",
-      "label": "Map 1"
+      "label": "Map 1",
+      "useDataSources": [
+        {
+          "dataSourceId": "dataSource_1"
+        }
+      ]
     },
     "widget_12": {
       "id": "widget_12",
@@ -979,10 +988,10 @@
       "version": "1.0.0",
       "label": "view-layers-toggle 1",
       "config": {
+        "exampleConfigProperty": "test",
         "layerUrls": [
           "https://sampleserver6.arcgisonline.com/arcgis/rest/services/Earthquakes_Since1970/MapServer/0",
-          "https://sampleserver6.arcgisonline.com/arcgis/rest/services/SampleWorldCities/MapServer/0",
-          "https://sampleserver6.arcgisonline.com/arcgis/rest/services/USA/MapServer/2"
+          "https://sampleserver6.arcgisonline.com/arcgis/rest/services/SampleWorldCities/MapServer/0"
         ]
       },
       "id": "widget_18",
@@ -993,7 +1002,7 @@
   },
   "customTheme": {
     "colors": {
-      "primary": "#18005b",
+      "primary": "#0d0076",
       "secondary": "#ffd11c",
       "info": "#09acf8",
       "success": "#00cca5",
@@ -1123,7 +1132,15 @@
   "views": {},
   "sections": {},
   "dialogs": {},
-  "dataSources": {},
+  "dataSources": {
+    "dataSource_1": {
+      "type": "WEB_MAP",
+      "itemId": "623c6136154d4a1bbbfecab6f01c48a4",
+      "id": "dataSource_1",
+      "label": "Blank Public",
+      "portalUrl": "https://PS-DBS.maps.arcgis.com"
+    }
+  },
   "messageConfigs": {},
   "pageStructure": [
     {

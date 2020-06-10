@@ -3,16 +3,17 @@
   "type": "widget",
   "version": "1.0.0",
   "exbVersion": "1.0.0",
-  "author": "",
+  "author": "Gavin Rehkemper",
+  "description": "Select a layer",
   "dependency": [
     "jimu-arcgis"
   ],
-  "description": "Widget to toggle through viewing different layers on the map.",
   "copyright": "",
   "license": "http://www.apache.org/licenses/LICENSE-2.0",
   "properties": {},
-  "supportedLocales": [
-    "en"
+  "translatedLocales": [
+    "en",
+    "es"
   ],
   "defaultSize": {
     "width": 800,
