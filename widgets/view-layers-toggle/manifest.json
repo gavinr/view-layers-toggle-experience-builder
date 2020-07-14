@@ -2,7 +2,7 @@
   "name": "view-layers-toggle",
   "type": "widget",
   "version": "1.0.0",
-  "exbVersion": "1.0.0",
+  "exbVersion": "1.1.0",
   "author": "",
   "dependency": [
     "jimu-arcgis"
@@ -11,7 +11,7 @@
   "copyright": "",
   "license": "http://www.apache.org/licenses/LICENSE-2.0",
   "properties": {},
-  "supportedLocales": [
+  "translatedLocales": [
     "en"
   ],
   "defaultSize": {
